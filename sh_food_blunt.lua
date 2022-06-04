@@ -25,16 +25,14 @@ ITEM.Food = -50
 function ITEM:OnUse(ply)
       ply:FeedHunger(self.Food)
     return true
-    ply:Notify("That's some good shit...")	
+      ply:Notify("That's some good shit...")	
     return true
     local effectData = EffectData()	
     effectData:SetOrigin(ply:GetPos()) 
     
     util.Effect("ElectricSpark", effectData)
-    Player:SetRunSpeed( 350 runSpeed )
-
-
-
+    return true
+     Player:SetRunSpeed( 350 runSpeed )
   return true
 end
 
