@@ -31,6 +31,10 @@ function ITEM:OnUse(ply)
     effectData:SetOrigin(ply:GetPos()) 
     
     util.Effect("ElectricSpark", effectData)
+    Player:SetRunSpeed( 350 runSpeed )
+
+
+
   return true
 end
 
