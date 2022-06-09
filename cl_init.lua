@@ -21,3 +21,17 @@ function ENT:Draw()
     self.HUDName = "Growing..."
     self.HUDDesc = self.Percentage .. "%"
 end
+
+local requiredNames = {
+ [0] = "Requires Weed seed",
+ [1] = "Requires Water",
+}
+
+function ENT.Think()
+ local required = self:GetRequired()
+ self:SetClientNextThink(CurTime() + 1)
+
+ if required and requiredNames[required] theb
+  self.HUDnames = requiredNames[required]
+ end
+end
