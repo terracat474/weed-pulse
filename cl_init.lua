@@ -31,7 +31,7 @@ function ENT.Think()
  local required = self:GetRequired()
  self:SetClientNextThink(CurTime() + 1)
 
- if required and requiredNames[required] theb
+ if required and requiredNames[required] then
   self.HUDnames = requiredNames[required]
  end
 end
