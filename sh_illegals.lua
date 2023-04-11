@@ -5,7 +5,8 @@ impulse.Business.Define("Weed Pot", {
     price = 100,
     refundAdd = 75,
     refund = true,
-    removeOnTeamSwitch = true,
+    If TeamSwitch = "CP" then removeOnTeamSwitch = true
+   else removeOnTeamSwitch = false,
     postSpawn = function(ent, ply)
     	ply.BarrelCount = (ply.BarrelCount or 0) + 1
     end,
