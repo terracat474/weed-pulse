@@ -1,7 +1,6 @@
+-- "gamemodes\\landis-hl2rp\\entities\\entities\\impulse_hl2rp_brewingbarrel\\cl_init.lua"
+-- Retrieved by https://github.com/lewisclark/glua-steal
 include("shared.lua")
-local start.time
-local end.time
-
 ENT.Percentage = 0
 
 function ENT:Think()
@@ -11,28 +10,16 @@ end
 
 function ENT:Draw()
     self:DrawModel()
-end
 
-local requiredNames = {
- [0] = "Requires Weed seed",
- [1] = "Requires Water",
- [2] = "Growing...",
- [3] = "Growing 100%",
-}
+    self.Percentage = math.Round((math.Clamp((self:GetStartTime() - CurTime()) / (self:GetStartTime() - self:GetEndTime()), 0, 1) * 100), 1)
+  
+    if self.Percentage == 0 then
+        self.HUDName = "Brewing Barrel"
+        self.HUDDesc = "Used to brew alcohol"
 
-function ENT.Think()
- local required = self:GetRequired()
- self:SetClientNextThink(CurTime() + 1)
+        return
+    end
 
- if required and requiredNames[required] then
-  self.HUDnames = requiredNames[required]
- end
-end
-
-if required = 2 then
- start.time = (CurTime())
-end
-
-if (CurTime()) = start.time + 5
- then required = 3
+    self.HUDName = "Brewing..."
+    self.HUDDesc = self.Percentage .. "%"
 end

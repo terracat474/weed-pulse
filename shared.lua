@@ -1,21 +1,27 @@
+-- "gamemodes\\landis-hl2rp\\entities\\entities\\impulse_hl2rp_brewingbarrel\\shared.lua"
+-- Retrieved by https://github.com/lewisclark/glua-steal
 ENT.Base = "base_anim"
 ENT.Type = "anim"
-ENT.PrintName = "Weed Pot"
-ENT.Author = "TerraCat474"
+ENT.PrintName = "Brewing Barrel"
+ENT.Author = "aLoneWitness"
 ENT.Category = "impulse - alcohol"
 ENT.Spawnable = true
 ENT.AdminOnly = true
 
-ENT.HUDName = "Weed Pot"
-ENT.HUDDesc = "Used to grow weed."
+ENT.HUDName = "Brewing Barrel"
+ENT.HUDDesc = "Used to brew moonshine."
 
 ENT.Ingredients = {
     {
-        name = "Weed seed",
+        name = "Water",
         isPresent = false
     },
     {
-        name = "Water",
+        name = "Yeast",
+        isPresent = false
+    },
+    {
+        name = "Spices",
         isPresent = false
     }
 }
@@ -28,3 +34,4 @@ function ENT:SetupDataTables()
         self:SetEndTime(0)
     end
 end
+
